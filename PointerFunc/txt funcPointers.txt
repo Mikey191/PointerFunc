@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void foo1()
+{
+	cout << "void foo1" << endl;
+}
+
+void foo2()
+{
+	cout << "void foo2" << endl;
+}
+
+int foo3(int a)
+{
+	return a - 1;
+}
+
+
+int main()
+{
+	void(*fooPointer)();
+
+	fooPointer = foo1;
+
+	fooPointer();//вызываем функцию foo1
+
+
+	fooPointer = foo2;
+
+	fooPointer();//вызываем функцию foo2
+
+	int(*fooPointer2)(int a);
+
+	fooPointer2 = foo3;
+
+
+
+	return 0;
+}

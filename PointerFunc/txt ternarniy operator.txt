@@ -1,0 +1,65 @@
+//Тернарный оператор
+//
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int x = 5;
+	x++; //унарный оператор
+	int y = 6;
+	x + y;//бинарный оператор
+
+	int a;
+	cout << "Введите а";
+	cin >> a;
+
+	if (a<10)
+	{
+		cout << "a меньше 10" << endl;
+	}
+	else
+	{
+		cout << "a больше 10" << endl;
+	}
+	(a < 10) ? (cout << "a меньше 10" << endl): (cout << "a больше 10" << endl); //тернарный оператор 
+	//проверяется на истинность с помощью ?										//a<10 - условие 
+				//если true						//если faulse					//первое выражение - это результат если тру,
+																				//после : результат если лож
+
+}
+===
+//Тернарный оператор
+//
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+	int a;
+	cout << "Введите а";
+	cin >> a;
+
+	if (a<10)
+	{
+		cout << "a меньше 10" << endl;
+	}
+	else 
+	{
+		if (a > 10)
+		{
+			cout << "a больше 10" << endl;
+		}
+		else
+		{
+			cout << "a равна 10" << endl;
+		}
+	}
+
+	(a < 10) ? (cout << "a меньше 10" << endl) : (a > 10) ? (cout << "a больше 10" << endl) : (cout << "a равна 10" << endl);
+			//if							//else		//if								//else
+}
+===

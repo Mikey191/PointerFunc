@@ -1,0 +1,33 @@
+//препроцессор - предварительная обрабботка
+//деректива define - в переводе определение. Она вставляет в код то, что мы используем для обозначения
+
+
+#include <iostream>
+#define PI 3.14
+#define tab "\t"
+#define begin { //все слова begin end будут подставлять скобки 
+#define end }
+using namespace std;
+
+void main()
+{
+	cout << PI << endl;
+	cout << "text" << tab << "text" << endl;
+
+	for (int i = 0; i < 5; i++)
+	begin
+		cout << i << endl;
+	end
+}
+
+===
+
+
+#include <iostream>
+#define FOO(x,y) ((x)*(y))
+using namespace std;
+
+void main()
+{
+	cout << FOO(5, 6) << endl;
+}

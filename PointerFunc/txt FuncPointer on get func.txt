@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string GetDataFromBD()//функция которая эмулирует возвращаемые значения из базы данных
+{
+	return "Data From BD";
+}
+
+string GetDataFromWebServer()
+{
+	return "Data From WebServer";
+}
+//не самая корректная реализация функции, которая возвращает значения с других функций
+//void ShowInfo(bool isFromBD )
+//{
+//	if (isFromBD) 
+//	{
+//		cout << DataFromBD() << endl;
+//	}
+//	else
+//	{
+//		cout << DataFromWebServer() << endl;
+//	}
+//}
+
+string GetDataFromAstral()
+{
+	return "Data From Astral";
+}
+
+void ShowInfo(string (*foo)())//корректная функция где string(*foo)() - это указатель на функцию, 
+							 //где любая из переданынх в этот указатель функций (если она подходит по параметрам) будет вызвана
+{
+	cout << foo() << endl;
+}
+
+void main()
+{
+	ShowInfo(GetDataFromBD);
+	ShowInfo(GetDataFromWebServer);
+	ShowInfo(GetDataFromAstral);
+}

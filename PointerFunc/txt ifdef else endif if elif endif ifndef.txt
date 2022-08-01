@@ -1,0 +1,76 @@
+//условная компеляция ifdef else endif if elif endif ifndef
+
+
+#include <iostream>
+using namespace std;
+//#define DEBUG //константа которая отвечает за то что видим мы тот или иной кусок кода или нет
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+#ifdef DEBUG //если define DEBUG
+	cout << "Начало цикла" << endl;
+#endif //DEBUG //конец действия define DEBUG
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		cout << i << endl;
+	}
+#ifdef DEBUG //если define DEBUG
+	cout << "Конец цикла" << endl;
+#endif //DEBUG //конец действия define DEBUG
+}
+===
+
+
+#include <iostream>
+using namespace std;
+#define DEBUG //константа которая отвечает за то что видим мы тот или иной кусок кода или нет
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+#ifndef DEBUG //если define DEBUG
+	cout << "дебаг определен" << endl;
+#else
+	cout << "дебаг не определен" << endl;
+#endif //DEBUG //конец действия define DEBUG
+
+}
+===
+
+
+#include <iostream>
+using namespace std;
+#define DEBUG 5 //константа которая отвечает за то что видим мы тот или иной кусок кода или нет
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+#if DEBUG < 4 //если define DEBUG конст
+	cout << "дебаг определен" << endl;
+#else
+	cout << "дебаг не определен" << endl;
+#endif //DEBUG //конец действия define DEBUG
+
+}
+===
+#include <iostream>
+using namespace std;
+#define DEBUG 5 //константа которая отвечает за то что видим мы тот или иной кусок кода или нет
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+#if DEBUG < 4 //если define DEBUG конст
+	cout << "дебаг определен" << endl;
+#elif DEBUG == 5
+	cout << "дебаг не определен" << endl;
+#endif //DEBUG //конец действия define DEBUG
+
+}
+===
